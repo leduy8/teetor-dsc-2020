@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>index</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/newsfeed.css" />
+  <link rel="stylesheet" type="text/css" href="css/profile.css" />
+  <link rel="stylesheet" type="text/css" href="css/login.css" />
+  <link rel="stylesheet" type="text/css" href="css/signup.css" />
+  <link rel="stylesheet" type="text/css" href="css/evaluation.css" />
+  <link rel="stylesheet" type="text/css" href="css/search.css">
+</head>
+
+<body>
+  <div id="authorization">
+    <div id="login">
+      <div class="auth-card">
+        <div class="auth-card__container">
+          <form class="auth-card__form">
+            <span class="auth-card__title">
+              Login
+            </span>
+    
+            <div class="auth-card__email">
+              <input
+                class="auth-card__input"
+                type="text"
+                name="email"
+                placeholder="Username"
+              />
+            </div>
+    
+            <div class="auth-card__password">
+              <input
+                class="auth-card__input"
+                type="password"
+                name="password"
+                placeholder="Password"
+              />
+            </div>
+    
+            <div class="auth-card__btn">
+              <button class="auth-card__auth">
+                Log in
+              </button>
+            </div>
+    
+            <div class="auth-card--center auth-card__forgot--padding">
+              <span class="auth-card__text__left">
+                Forgot
+              </span>
+    
+              <a href="#" class="auth-card__text__right auth-card__text--hover">
+                Username / Password?
+              </a>
+            </div>
+    
+            <div class="auth-card--center">
+              <span class="auth-card__text__left">
+                Create an account?
+              </span>
+    
+              <a
+                href="#"
+                class="auth-card__text__right auth-card__text--hover auth-card__signup-btn"
+              >
+                Sign up
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div id="signup">
+      <div class="auth-card">
+        <div class="auth-card__container">
+          <form class="auth-card__form">
+            <span class="auth-card__title">
+              Sign up
+            </span>
+            <div class="auth-card__email">
+              <input class="auth-card__input" type="text" name="email" placeholder="Email" />
+            </div>
+    
+            <div class="auth-card__password">
+              <input class="auth-card__input" type="password" name="password" placeholder="Password" />
+            </div>
+    
+            <div class="auth-card__fullname">
+              <input class="auth-card__input" type="text" name="fullname" placeholder="Full name">
+            </div>
+    
+            <div class="auth-card__age">
+              <input
+                    class=" auth-card__input" type="number" name="age" placeholder="Age" />
+            </div>
+    
+            <div class="auth-card__cellphone">
+              <input class="auth-card__input" type="text" name="cellphone" placeholder="Cellphone" />
+            </div>
+    
+            <div class="auth-card__options">
+              <div>
+                <input onclick="UIController.position_display('mentee')" id="signup-mentee" class="auth-card__options__mentee" type="radio" name="user">
+                <label for="signup-mentee">Mentee</label>
+              </div>
+              <div>
+                <input onclick="UIController.position_display('mentor')" id="signup-mentor" class="auth-card__options__mentor" type="radio" name="user">
+                <label for="signup-mentor">Mentor</label>
+              </div>
+            </div>
+    
+            <div class="auth-card__school">
+              <input class="auth-card__input" type="text" name="school" placeholder="School" />
+            </div>
+    
+            <div class="auth-card__job">
+              <input class="auth-card__input" type="text" name="job" placeholder="Job">
+            </div>
+    
+            <div class="auth-card__btn">
+              <button class="auth-card__auth">
+                Register
+              </button>
+            </div>
+    
+            <div class="auth-card--center auth-card__text--padding">
+              <span class="auth-card__text__left">
+                Already have an account?
+              </span>
+    
+              <a href="#" class="auth-card__text__right auth-card__text--hover auth-card__login-btn">
+                Login here!
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-activity">
+    <header>
+      <nav class="nav">
+        <a class="nav__item" href="#"><i class="fa fa-line-chart nav--active"></i></a>
+        <a class="nav__item" href="#"><i class="fa fa-user-circle"></i></a>
+        <a class="nav__item" href="#"><i class="fa fa-home"></i></a>
+        <a class="nav__item" href="#"><i class="fa fa-search"></i></a>
+      </nav>
+    </header>
+
+    <div id="evaluation">
+      <div class="mentee mentee--not-connected">
+        <div class="evaluation-card">
+          <div class="evaluation-card__request">
+            <p class="evaluation-card__welcome-text">You didn't connect to any mentor</p>
+            <button class="evaluation-card__btn evaluation-card__connect-btn">Connect</button>
+          </div>
+          <div class="evaluation-card__pending">
+            <p class="evaluation-card__welcome-text">Please wait for the mentor to response!</p>
+            <div style="display: flex;">
+              <button class="evaluation-card__btn btn__left evaluation-card__cancel-btn">Cancel</button>
+              <button disabled class="evaluation-card__btn evaluation-card__pending-btn">Pending</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mentee mentee--connected">
+        <div class="evaluation-card__disconnect">
+          <button class="evaluation-card__btn evaluation-card__disconnect-btn">Disconnect</button>
+        </div>
+        <div class="evaluation-card">
+          <span class="evaluation-card__header"></span>
+          <div class="evaluation-card__content evaluation-card__general">
+            <!-- <p class="evaluation-card__title">General Evaluation from mentor Duy Ngaos - Bussiness Strategist</p>
+            <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum autem
+              sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+              distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem? Minus
+              saepe quos architecto sed.</p> -->
+          </div>
+        </div>
+        <div class="evaluation-card evaluation__history">
+          <span class="evaluation-card__header"></span>
+          <div class="evaluation-card__content">
+            <p class="evaluation-card__title">History</p>
+            <!-- <div class="evaluation-card__item">
+              <p class="evaluation-card__date">March 18th, 2020</p>
+              <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum
+                dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum
+                autem
+                sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+                distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem?
+                Minus
+                saepe quos architecto sed.</p>
+            </div>
+
+            <hr class="evaluation-card__line" />
+
+            <div class="evaluation-card__item">
+              <p class="evaluation-card__date">March 18th, 2020</p>
+              <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum
+                dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum
+                autem
+                sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+                distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem?
+                Minus
+                saepe quos architecto sed.</p>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor mentor--connected">
+        <!-- <div class="evaluation-card flex evaluation-card__mentee">
+          <span class="evaluation-card__my-mentee"><i
+              class="fa fa-user evaluation-card__my-mentee--selected"></i></span>
+          <span class="evaluation-card__my-mentee"><i class="fa fa-user"></i></span>
+          <span class="evaluation-card__my-mentee"><i class="fa fa-user"></i></span>
+
+        </div> -->
+        <div class="evaluation-card">
+          <span class="evaluation-card__header"></span>
+          <div class="evaluation-card__content evaluation-card__general">
+            <!-- <p class="evaluation-card__title">General Evaluation from mentor Duy Ngaos - Bussiness Strategist</p>
+            <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum
+              dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum autem
+              sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+              distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem? Minus
+              saepe quos architecto sed.</p> -->
+          </div>
+        </div>
+        <div class="evaluation-card">
+          <span class="evaluation-card__header"></span>
+          <div class="evaluation-card__content evaluation-card__history">
+            <span class="evaluation-card__add"><i class="fa fa-plus-circle"></i></span>
+            <p class="evaluation-card__title">History</p>
+            <form class="evaluation-card__add-history">
+              <p class="evaluation-card__add-history__item">Add entry</p>
+              <div class="evaluation-card__add-history__item" id="evaluation-card__history-input">
+                <label class="evaluation-card__history-label" for="evaluation-card__history-date">Date</label>
+                <input type="date" id="evaluation-card__history-date" name="history-date"
+                  class="evaluation-card__input">
+                <span><i class="fa fa-calendar"></i></span>
+              </div>
+
+              <div class="evaluation-card__add-history__item" id="evaluation-card__positivity-input">
+                <p class="evaluation-card__history-label">Positivity</p>
+                <input type="range" min="1" max="100" value="1" class="slider" id="positivity-slider"
+                  name="positivity">
+              </div>
+
+              <div class="evaluation-card__add-history__item" id="evaluation-card__applicability-input">
+                <p class="evaluation-card__history-label">Applicability</p>
+                <input type="range" min="1" max="100" value="1" class="slider" id="applicability-slider"
+                  name="applicability">
+              </div>
+
+              <div class="evaluation-card__add-history__item" id="evaluation-card__acquirablity-input">
+                <p class="evaluation-card__history-label">Acquirablity</p>
+                <input type="range" min="1" max="100" value="1" class="slider" id="acquirablity-slider"
+                  name="acquirability">
+              </div>
+
+              <div class="evaluation-card__add-history__item" id="evaluation-card__comment-input">
+                <p id="evaluation-card__comment-label">Comment</p>
+                <textarea name="history-comment" id="comment-textarea" cols="30" rows="10"></textarea>
+              </div>
+
+              <div class="center-block">
+                <button class="evaluation-card__btn btn__left">Cancel</button>
+                <button class="evaluation-card__btn btn__right">Save</button>
+              </div>
+
+              <hr class="evaluation-card__line">
+            </form>
+            
+            <!-- <div class="evaluation-card__item">
+              <p class="evaluation-card__date">March 18th, 2020</p>
+              <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum
+                dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum
+                autem
+                sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+                distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem?
+                Minus
+                saepe quos architecto sed.</p>
+            </div>
+
+            <hr class="evaluation-card__line" />
+
+            <div class="evaluation-card__item">
+              <p class="evaluation-card__date">March 18th, 2020</p>
+              <p class="evaluation-card__description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laborum
+                dolore incidunt quaerat! Illum ullam minus facilis impedit eius. Magni illo dolores laborum
+                autem
+                sapiente inventore, delectus tempore in doloremque accusamus accusantium, expedita dignissimos
+                distinctio temporibus sunt vero neque officiis quas iusto fugit necessitatibus pariatur rem?
+                Minus
+                saepe quos architecto sed.</p>
+            </div> -->
+            <!-- <svg width="960" height="500" class="evaluation-card__chart-history item-100"></svg> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="profile">
+      <div class="mentee">
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Basic infomation</p>
+              <div>
+                <img class="profile-card__avatar" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+                  alt="user avatar" />
+                <span><i class="fa fa-upload"></i></span>
+              </div>
+              <form class="profile-card__form" action="">
+                <label for="fullname">
+                  <input id="mentee__fullname" class="profile-card__input" name="fullname" type="text" placeholder="Full name" />
+                </label>
+                
+                <label for="age">
+                  <input id="mentee__age" class="profile-card__input" name="age" type="number" placeholder="Age" />
+                </label>
+                
+                <label for="cellphone">
+                  <input id="mentee__cellphone" class="profile-card__input" name="cellphone" type="text" placeholder="Cellphone" />
+                </label>
+                
+                <label for="position">
+                  <input id="mentee__position" class="profile-card__input" name="position" type="text" placeholder="Position" />
+                </label>
+                
+                <label for="bio">
+                  <textarea id="mentee__bio" name="bio" class="profile-card__textarea" placeholder="Bio" cols="22" rows="6"></textarea>
+                </label>
+                
+                <div class="">
+                  <button class="profile-card__btn btn__left">Cancel</button>
+                  <button class="profile-card__btn btn__right">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">Certificate</p>
+              <span class="profile-card__add"><i class="fa fa-plus-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">Honors & Awards</p>
+              <span class="profile-card__add"><i class="fa fa-plus-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content profile-card__content-my-mentor">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">My Mentor</p>
+            </div>
+            <!-- <div class="flex profile-card__my-mentor">
+              <img class="profile-card__avatar m-l-5p"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+              <div class="block m-l-5p">
+                <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                <p class="profile-card__info">Bussiness Strategist</p>
+                <div class="center-block">
+                  <button class="profile-card__btn btn__right">See Evaluation</button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+
+      <div class="mentor">
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Basic infomation</p>
+              <div>
+                <img class="profile-card__avatar" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+                  alt="user avatar" />
+                <span><i class="fa fa-upload"></i></span>
+              </div>
+              <form class="profile-card__form" action="">
+
+                <label for="fullname">
+                  <input id="mentor__fullname" class="profile-card__input" name="fullname" type="text" placeholder="Full name" />
+                </label>
+
+                <label for="age">
+                  <input id="mentor__age" class="profile-card__input" name="age" type="number" placeholder="Age" />
+                </label>
+
+                <label for="cellphone">
+                  <input id="mentor__cellphone" class="profile-card__input" name="cellphone" type="text" placeholder="Cellphone" />
+                </label>
+
+                <label for="position">
+                  <input id="mentor__position" class="profile-card__input" name="position" type="text" placeholder="Position" />
+                </label>
+
+                <label for="bio">
+                  <textarea id="mentor__bio" name="bio" class="profile-card__textarea" placeholder="Bio" cols="22" rows="6"></textarea>
+                </label>
+
+                <div class="">
+                  <button class="profile-card__btn btn__left">Cancel</button>
+                  <button class="profile-card__btn btn__right">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">Certificate</p>
+              <span class="profile-card__add"><i class="fa fa-plus-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">Honors & Awards</p>
+              <span class="profile-card__add"><i class="fa fa-plus-circle"></i></span>
+            </div>
+          </div>
+        </div>
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content profile-card__my-mentees">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">My Mentees</p>
+            </div>
+
+            <!-- <div class="flex profile-card__my-mentee">
+              <img class="profile-card__avatar m-l-5p"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+              <div class="block">
+                <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                <p class="profile-card__info">Bussiness Strategist</p>
+                <div class="m-l-10p">
+                  <button class="profile-card__btn btn__right">Evaluate</button>
+                </div>
+              </div>
+            </div>
+
+            <hr class="profile-card__line">
+
+            <div class="flex">
+              <img class="profile-card__avatar m-l-5p"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+              <div class="block">
+                <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                <p class="profile-card__info">Bussiness Strategist</p>
+                <div class="m-l-10p">
+                  <button class="profile-card__btn btn__right">Evaluate</button>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content profile-card__pending-mentees">
+            <div class="center-block">
+              <p class="profile-card__title profile-card__title--inline">Pending mentees</p>
+            </div>
+
+            <!- - <div class="profile-card__pending-mentee">
+              <div class="flex">
+                <img class="profile-card__avatar m-l-5p"
+                  src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+                <div class="block">
+                  <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                  <p class="profile-card__info">Bussiness Strategist</p>
+                </div>
+              </div>
+              <p class="profile-card__pending-mentee__info profile-card__pending-mentee__info--bold">Why do you need this mentor?</p>
+              <p class="profile-card__pending-mentee__info">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Eligendi illo exercitationem doloribus.
+                Laborum, nesciunt dolor impedit nostrum expedita odit consequuntur nobis eos! Voluptas adipisci tenetur
+                deserunt qui, accusantium, deleniti unde perferendis eum quam eaque velit explicabo fugiat voluptates
+                omnis. Deleniti iusto nemo voluptate! Maxime corporis dolore deleniti earum sit error.</p>
+              <div class="center-block">
+                <button class="profile-card__btn btn__left">Decline</button>
+                <button class="profile-card__btn btn__right">Accept</button>
+              </div>
+            </div> - ->
+          </div>
+        </div> -->
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Activites</p>
+              <img class="profile-card__img--full"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Image of activity">
+            </div>
+            <p class="profile-card__info-activity profile-card__info--bold">Duy Ngaos</p>
+            <p class="profile-card__info-activity profile-card__info--date">March 18,2020</p>
+            <p class="profile-card__info-activity">Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Exercitationem
+              necessitatibus provident
+              nostrum, blanditiis quam error aut sapiente quia dicta tenetur similique quo maiores consectetur voluptate
+              a, nisi adipisci. Cumque dignissimos sint necessitatibus consequatur molestiae reprehenderit numquam,
+              architecto consectetur non quo ex totam amet soluta quidem animi quia, ipsum iure nemo?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="profile-card">
+        <div class="center-block">
+          <button class="profile-card__btn btn__left profile-card__logout-btn">Log Out</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="newsfeed">
+      <div class="mentee">
+        <div class="news-card">
+          <span class="news-card__header"></span>
+          <div class="news-card__content">
+            <p class="news-card__info news-card__user">Duy Ngaos</p>
+            <p class="news-card__info news-card__date">March 18th, 2020</p>
+            <p class="news-card__info news-card__desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
+              atque iste nobis quidem dolore error animi voluptas quia corrupti
+              consectetur.
+            </p>
+          </div>
+          <img class="news-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+            alt="Image" />
+        </div>
+        <div class="news-card">
+          <span class="news-card__header"></span>
+          <div class="news-card__content">
+            <p class="news-card__info news-card__user">Duy Ngaos</p>
+            <p class="news-card__info news-card__date">March 18th, 2020</p>
+            <p class="news-card__info news-card__desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
+              atque iste nobis quidem dolore error animi voluptas quia corrupti
+              consectetur.
+            </p>
+          </div>
+          <img class="news-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+            alt="Image" />
+        </div>
+      </div>
+
+      <div class="mentor">
+        <div class="news-card">
+          <textarea name="post-bar" id="news-card__post-bar" placeholder="What are you thinking?" cols="30"
+            rows="5"></textarea>
+          <div class="flex news-card__btn">
+            <button class="news-card__media-btn"><i class="fa fa-image"></i>Image/Video</button>
+            <button class="news-card__post-btn">Post</button>
+          </div>
+        </div>
+        <div class="news-card">
+          <span class="news-card__header"></span>
+          <div class="news-card__content">
+            <p class="news-card__info news-card__user">Duy Ngaos</p>
+            <p class="news-card__info news-card__date">March 18th, 2020</p>
+            <p class="news-card__info news-card__desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
+              atque iste nobis quidem dolore error animi voluptas quia corrupti
+              consectetur.
+            </p>
+          </div>
+          <img class="news-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+            alt="Image" />
+        </div>
+        <div class="news-card">
+          <span class="news-card__header"></span>
+          <div class="news-card__content">
+            <p class="news-card__info news-card__user">Duy Ngaos</p>
+            <p class="news-card__info news-card__date">March 18th, 2020</p>
+            <p class="news-card__info news-card__desc">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero
+              atque iste nobis quidem dolore error animi voluptas quia corrupti
+              consectetur.
+            </p>
+          </div>
+          <img class="news-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+            alt="Image" />
+        </div>
+      </div>
+    </div>
+
+    <div id="search">
+      <div class="mentee">
+        <div class="search-card search-card__input-field">
+          <form class="search-card__search-form">
+            <input name="mentor-name" class="search-card__input" type="text" placeholder="Mentor's name">
+            <input name="mentor-job" class="search-card__input" type="text" placeholder="Job">
+            <button class="search-card__search-btn">Search</button>
+          </form>
+        </div>
+
+        <div class="spacing" style="margin-top: 4em;"></div>
+
+        <div class="search-card search-card__results">
+          <!-- <span class="search-card__header"></span>
+          <div class="search-card__content search-card__content--flex">
+            <img class="search-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+              alt="user_avatar">
+  
+            <div class="search-card__mentor">
+              <p class="search-card__mentor-name">Duy Ngaos</p>
+              <p class="search-card__mentor-job">Bussiness Strategist</p>
+              <button class="search-card__connect-btn">Connect</button>
+            </div>
+          </div> -->
+        </div>
+
+        <div class="search-card search-card__application-form">
+          <span class="search-card__header"></span>
+          <div class="search-card__content">
+            <form class="search-card__form">
+              <p class="search-card__form-title">Why do you need this mentor</p>
+              <textarea name="essay" id="search-card__form-textarea" cols="40" rows="10"></textarea>
+              <div class="btn">
+                <button class="search-card__discard-btn">Discard</button>
+                <button class="search-card__submit-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="search-card__mentor-profile">
+        <span class="profile-card__back-btn"><i class="fa fa-chevron-circle-left"></i></span>
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Basic infomation</p>
+              <img class="profile-card__avatar" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+                alt="user avatar" />
+              <div class="profile-card__request">
+                <button class="profile-card__btn profile-card__connect-btn">Connect</button>
+              </div>
+              <div class="profile-card__pending">
+                <button class="profile-card__btn btn__left profile-card__cancel-btn">Cancel</button>
+                <button disabled class="profile-card__btn profile-card__pending-btn">Pending</button>
+              </div>
+              <div class="profile-card__disconnect">
+                <button class="profile-card__btn btn__left profile-card__disconnect-btn">Disconnect</button>
+              </div>
+            </div>
+            <p class="profile-card__info">Full name: </p>
+            <p class="profile-card__info">Age: </p>
+            <p class="profile-card__info">Cellphone: </p>
+            <p class="profile-card__info">School: </p>
+            <p class="profile-card__info profile-card__info--blank">Bio: </p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Experiences</p>
+            </div>
+            <div class="flex">
+              <img class="profile-card__img" src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg"
+                alt="Image of company">
+              <div class="block">
+                <p class="profile-card__info">Role</p>
+                <p class="profile-card__info">Company</p>
+                <p class="profile-card__info">Working Period</p>
+              </div>
+            </div>
+            <p class="profile-card__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+              exercitationem
+              aliquam itaque sapiente impedit ipsum beatae rerum, placeat sint sequi animi assumenda voluptate,
+              tempore
+              amet laboriosam neque cum veritatis. Nam, unde porro ut vitae voluptate ad optio quis, libero nisi
+              voluptas ipsam ea sed quae facilis necessitatibus doloribus. Sequi, aut.</p>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Certificate</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Honors & Awards</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Mentees</p>
+            </div>
+            <div class="flex">
+              <img class="profile-card__avatar m-l-5p"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+              <div class="block">
+                <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                <p class="profile-card__info">Academy X</p>
+              </div>
+            </div>
+            <hr class="profile-card__line">
+            <div class="flex">
+              <img class="profile-card__avatar m-l-5p"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Avatar">
+              <div class="block">
+                <p class="profile-card__info profile-card__info--bold">Duy Ngaos</p>
+                <p class="profile-card__info">Academy X</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <span class="profile-card__header"></span>
+          <div class="profile-card__content">
+            <div class="center-block">
+              <p class="profile-card__title">Activites</p>
+              <img class="profile-card__img--full"
+                src="https://icatcare.org/app/uploads/2018/06/Layer-1704-1920x840.jpg" alt="Image of activity">
+            </div>
+            <p class="profile-card__info-activity profile-card__info--bold">Duy Ngaos</p>
+            <p class="profile-card__info-activity profile-card__info--date">March 18,2020</p>
+            <p class="profile-card__info-activity">Lorem ipsum dolor sit amet, consectetur
+              adipisicing elit. Exercitationem
+              necessitatibus provident
+              nostrum, blanditiis quam error aut sapiente quia dicta tenetur similique quo maiores consectetur
+              voluptate
+              a, nisi adipisci. Cumque dignissimos sint necessitatibus consequatur molestiae reprehenderit numquam,
+              architecto consectetur non quo ex totam amet soluta quidem animi quia, ipsum iure nemo?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-firestore.js"></script>
+
+  <script src="node_modules/localforage/dist/localforage.js"></script>
+  <script src="scripts/user.js"></script>
+  <script src="scripts/api.js"></script>
+  <script src="scripts/command.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+</html>

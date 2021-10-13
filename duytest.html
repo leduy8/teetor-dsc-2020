@@ -1,0 +1,38 @@
+<html>
+  <head>
+    <title>á</title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <form action="">
+      <input type="text" name="fullname" class="input" />
+      <input type="text" name="school" class="input" />
+      <button onclick="myFunc()">Btn</button>
+
+      <input type="radio" name="user" id="radio-1" />
+      <input type="radio" name="user" id="radio-2" />
+      <button onclick="getSelectedRadioBtn()">Btn</button>
+    </form>
+
+    <script>
+      var myFunc = function () {
+        document
+          .querySelector(".input")
+          .school.setAttribute("placeholder", "lololol");
+      };
+      var getSelectedRadioBtn = function () {
+        if (document.querySelector("#radio-1").checked) {
+          console.log("Radio 1");
+        } else if (document.querySelector("#radio-2").checked) {
+          console.log("Radio 2");
+        }
+
+        var radios = document.querySelectorAll("");
+
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+        }
+      };
+    </script>
+  </body>
+</html>

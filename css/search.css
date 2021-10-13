@@ -1,0 +1,184 @@
+.search-card {
+  padding: 0.3em 5em;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.search-card .search-card__input {
+  margin: 0em auto;
+  display: block;
+  width: 60%;
+  background: whitesmoke;
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.2;
+  height: 68px;
+  padding: 0 25px 0 25px;
+  outline: none;
+  border: 1px solid #cacaca;
+}
+
+.search-card__search-btn {
+  position: absolute;
+  right: 40%;
+  color: #4272d7;
+  cursor: pointer;
+  width: 125px;
+  height: 45px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid #4372d8;
+  border-radius: 10px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.8em;
+  margin: 1em auto;
+}
+
+.search-card .search-card__header {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background: #18a0fb;
+}
+
+.search-card .search-card__content {
+  padding: 1.5em;
+  background: white;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.search-card .search-card__content--flex {
+  display: flex;
+  justify-content: space-around;
+}
+
+.search-card .search-card__img {
+  /* make a square container */
+  width: 150px;
+  height: 150px;
+
+  /* fill the container, preserving aspect ratio, and cropping to fit */
+  background-size: cover;
+
+  /* center the image vertically and horizontally */
+  background-position: top center;
+
+  /* round the edges to a circle with border radius 1/2 container size */
+  border-radius: 50%;
+}
+
+.search-card .search-card__mentor {
+  position: relative;
+}
+
+.search-card .search-card__input {
+  display: block;
+  margin: 0.3em auto;
+  height: 1.5em;
+  font-size: 1em;
+  outline: none;
+}
+
+.search-card .search-card__connect-btn {
+  color: #fff;
+  cursor: pointer;
+  width: 125px;
+  height: 45px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: #4372d8;
+  border: 1px solid #4372d8;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.8em;
+  margin: 1em auto;
+}
+
+.search-card .search-card__header {
+  display: block;
+  height: 10px;
+  width: 100%;
+  background: #18a0fb;
+}
+
+.search-card #search-card__form-textarea {
+  margin: 0em auto;
+  display: block;
+  width: 90%;
+  background: whitesmoke;
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: #666666;
+  line-height: 1.2;
+  padding: 25px 25px 0 25px;
+  outline: none;
+  border: 1px solid #cacaca;
+  resize: none;
+  margin-bottom: 0.3em;
+}
+
+.search-card .search-card__discard-btn {
+  color: #4372d8;
+  cursor: pointer;
+  width: 125px;
+  height: 45px;
+  font-size: 11px;
+  font-weight: 500;
+  background-color: #fff;
+  border: 1px solid #4372d8;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.8em;
+  margin: 1em 1em 1em 0;
+}
+
+.search-card .search-card__submit-btn {
+  color: #fff;
+  width: 125px;
+  height: 45px;
+  font-weight: 500;
+  background-color: #4372d8;
+  border: 1px solid #4372d8;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.8em;
+  margin: 1em 0 1em 1em;
+}
+
+.search-card .search-card__form-title {
+  margin-bottom: 1em;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.btn {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.fa-chevron-circle-left {
+  position: absolute;
+  cursor: pointer;
+  left: 11em;
+  /*margin-top: 1em;*/
+  font-size: 25px;
+}
+
+.fa-chevron-circle-left:hover {
+  color: gray;
+}
